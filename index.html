@@ -48,34 +48,41 @@
       padding: 8px 0;
     }
     @media (max-width: 600px) {
-      header { padding: 0; }
+      header { padding: 0 1rem; }
       .header-inner {
         height: auto;
         flex-direction: column;
-        align-items: flex-start;
-        padding: 0.8rem 1.2rem 0;
+        align-items: center;
+        padding: 0.8rem 0 0;
         gap: 0;
       }
       .logo {
         font-size: 0.78rem !important;
-        line-height: 1.3;
-        padding-bottom: 0.2rem;
+        line-height: 1.4;
+        text-align: center;
+        width: 100%;
+        align-items: center !important;
       }
       nav {
         width: 100%;
         border-top: 1px solid var(--border);
         display: flex;
         justify-content: space-around;
-        padding: 0.5rem 0;
-        margin-top: 0.5rem;
+        padding: 0.6rem 0.5rem;
+        margin-top: 0.6rem;
+        gap: 0.4rem;
       }
       nav a {
-        margin-left: 0;
-        font-size: 0.82rem;
-        font-weight: 600;
-        color: var(--primary);
-        padding: 0.25rem 0.5rem;
+        margin-left: 0 !important;
+        font-size: 0.82rem !important;
+        font-weight: 700 !important;
+        padding: 0.4rem 0.8rem !important;
+        border-radius: 20px !important;
+        flex: 1;
+        text-align: center;
       }
+      .hero { min-height: 480px; }
+      .hero-content { padding: 2rem 1.5rem 2rem !important; }
     }
     .logo {
       font-size: 1.2rem;
@@ -444,30 +451,37 @@
 <!-- 헤더 -->
 <header>
   <div class="header-inner">
-    <a href="#" class="logo" style="font-size:0.95rem; line-height:1.3; display:flex; flex-direction:column;">제9대 원주시의회 <span style="font-size:1.1rem;">손준기 의원</span></a>
+    <a href="#top" class="logo" style="font-size:0.95rem; line-height:1.3; display:flex; flex-direction:column; text-align:center; width:100%; align-items:center;">제9대 원주시의회 <span style="font-size:1.2rem;">손준기 의원</span></a>
     <nav>
-      <a href="#activity">의정활동</a>
-      <a href="#complaint">민원접수</a>
-      <a href="#links">바로가기</a>
+      <a href="#activity" style="background:#1a4fa0; color:white; border-radius:20px; padding:0.3rem 0.9rem;">의정활동</a>
+      <a href="#complaint" style="background:#e8282e; color:white; border-radius:20px; padding:0.3rem 0.9rem;">민원접수</a>
+      <a href="#links" style="background:#2e7d32; color:white; border-radius:20px; padding:0.3rem 0.9rem;">바로가기</a>
     </nav>
   </div>
 </header>
 
 <!-- 히어로 -->
-<section class="hero">
+<section class="hero" id="top">
   <div class="hero-img"></div>
-  <div class="hero-content">
-  <div class="hero-badge">🏛 제9대 원주시의회의원</div>
-  <h1>현장의 목소리를<br><em>조례와 예산으로</em></h1>
-  <p>단계동 · 우산동 · 학성동 주민 여러분과 함께합니다</p>
-  <div style="margin-bottom:1rem; opacity:0.85; font-size:0.95rem;">
-    📞 의원실 대표번호: <strong style="color:#ffd700;">033-737-5050</strong>
+  <div class="hero-content" style="justify-content:space-between; padding: 3rem 2rem 2.5rem;">
+    <!-- 상단: 배지 -->
+    <div style="width:100%; text-align:center;">
+      <div class="hero-badge">🏛 제9대 원주시의회의원</div>
+    </div>
+    <!-- 중간: 빈 공간 (얼굴) -->
+    <div style="flex:1; min-height:160px;"></div>
+    <!-- 하단: 텍스트 + 버튼 -->
+    <div style="width:100%; text-align:center;">
+      <h1 style="font-size:clamp(1.6rem,5vw,3rem); margin-bottom:0.5rem;">현장의 목소리를<br><em>조례와 예산으로</em></h1>
+      <div style="margin-bottom:1.2rem; opacity:0.9; font-size:0.95rem;">
+        📞 의원실 대표번호: <strong style="color:#ffd700;">033-737-5050</strong>
+      </div>
+      <div class="hero-btns">
+        <a href="#complaint" class="btn-primary">📬 민원 접수하기</a>
+        <a href="#complaint" class="btn-secondary" onclick="switchTab('policy')">💡 정책 제안하기</a>
+      </div>
+    </div>
   </div>
-  <div class="hero-btns" style="margin-top:0.5rem;">
-    <a href="#complaint" class="btn-primary">📬 민원 접수하기</a>
-    <a href="#complaint" class="btn-secondary" onclick="switchTab('policy')">💡 정책 제안하기</a>
-  </div>
-  </div><!-- /hero-content -->
 </section>
 
 
@@ -660,6 +674,11 @@
 </footer>
 
 <script>
+  // 페이지 로드 시 항상 최상단
+  if (window.location.hash) {
+    history.replaceState(null, null, window.location.pathname);
+  }
+  window.onload = function() { window.scrollTo(0, 0); };
   // Formspree 이메일 전송 함수
   async function sendToEmail(formData, type) {
     const FORMSPREE_ID = 'xwpbwrkb'; // Formspree 설정 후 ID 교체
