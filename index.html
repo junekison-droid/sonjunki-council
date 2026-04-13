@@ -448,41 +448,120 @@
 </head>
 <body>
 
-<!-- 헤더 -->
-<header>
-  <div class="header-inner">
-    <a href="#top" class="logo" style="font-size:0.95rem; line-height:1.3; display:flex; flex-direction:column; text-align:center; width:100%; align-items:center;">제9대 원주시의회 <span style="font-size:1.2rem;">손준기 의원</span></a>
-    <nav>
-      <a href="#activity" style="background:#1a4fa0; color:white; border-radius:20px; padding:0.3rem 0.9rem;">의정활동</a>
-      <a href="#complaint" style="background:#e8282e; color:white; border-radius:20px; padding:0.3rem 0.9rem;">민원접수</a>
-      <a href="#links" style="background:#2e7d32; color:white; border-radius:20px; padding:0.3rem 0.9rem;">바로가기</a>
-    </nav>
-  </div>
-</header>
-
-<!-- 히어로 -->
-<section class="hero" id="top">
-  <div class="hero-img"></div>
-  <div class="hero-content" style="justify-content:space-between; padding: 3rem 2rem 2.5rem;">
-    <!-- 상단: 배지 -->
-    <div style="width:100%; text-align:center;">
-      <div class="hero-badge">🏛 제9대 원주시의회의원</div>
-    </div>
-    <!-- 중간: 빈 공간 (얼굴) -->
-    <div style="flex:1; min-height:160px;"></div>
-    <!-- 하단: 텍스트 + 버튼 -->
-    <div style="width:100%; text-align:center;">
-      <h1 style="font-size:clamp(1.6rem,5vw,3rem); margin-bottom:0.5rem;">현장의 목소리를<br><em>조례와 예산으로</em></h1>
-      <div style="margin-bottom:1.2rem; opacity:0.9; font-size:0.95rem;">
-        📞 의원실 대표번호: <strong style="color:#ffd700;">033-737-5050</strong>
-      </div>
-      <div class="hero-btns">
-        <a href="#complaint" class="btn-primary">📬 민원 접수하기</a>
-        <a href="#complaint" class="btn-secondary" onclick="switchTab('policy')">💡 정책 제안하기</a>
-      </div>
-    </div>
+<!-- 상단 히어로 (우상호.com 스타일) -->
+<section id="top" style="
+  position: relative;
+  background: linear-gradient(135deg, #0a2d6e 0%, #1a4fa0 60%, #0f3070 100%);
+  min-height: 340px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 1.5rem;
+">
+  <!-- 배경 인물 사진 -->
+  <div style="
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 65%;
+    background: url('profile.jpg') right top / cover no-repeat;
+    mask-image: linear-gradient(to left, rgba(0,0,0,0.9) 30%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.9) 30%, transparent 100%);
+  "></div>
+  <!-- 텍스트 콘텐츠 -->
+  <div style="position:relative; z-index:2; padding: 2.5rem 1.5rem 1rem; color:white; max-width:480px;">
+    <div style="font-size:0.75rem; font-weight:600; opacity:0.7; letter-spacing:1px; margin-bottom:0.3rem;">제9대 원주시의회의원</div>
+    <div style="font-size:1.7rem; font-weight:900; line-height:1.3; margin-bottom:0.2rem; font-style:italic; color:#a8c4ff;">원주가<br>바뀌는 순간</div>
+    <div style="font-size:2.8rem; font-weight:900; letter-spacing:-1px; line-height:1;">손준기</div>
+    <div style="margin-top:1rem; font-size:0.82rem; opacity:0.75;">현장에서 듣고, 의회에서 바꿉니다.</div>
   </div>
 </section>
+
+<!-- 메인 카드 섹션 -->
+<div style="background:#f0f4ff; padding: 1.2rem 1rem 6rem; min-height:50vh;">
+
+  <!-- 카드 01: 민원 접수 -->
+  <a href="#complaint" onclick="document.getElementById('complaint').scrollIntoView({behavior:'smooth'}); switchTab('complaint'); return false;"
+    style="display:block; text-decoration:none; margin-bottom:1rem;">
+    <div style="
+      background: linear-gradient(135deg, #1a4fa0 0%, #0f3070 100%);
+      border-radius: 16px;
+      padding: 1.4rem 1.5rem;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(26,79,160,0.3);
+    ">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <div style="background:rgba(255,255,255,0.15); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size:0.85rem; font-weight:900;">01</div>
+        <span style="font-size:0.75rem; opacity:0.7; font-weight:600;">시민접수</span>
+      </div>
+      <div style="margin-top:0.8rem;">
+        <div style="font-size:1.3rem; font-weight:900; margin-bottom:0.5rem;">민원 접수하기</div>
+        <div style="font-size:0.85rem; opacity:0.85; line-height:1.6;">
+          도로·환경·안전·복지 등 생활 불편 사항을<br>직접 접수해주세요. 끝까지 해결합니다.
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- 카드 02: 정책 제안 -->
+  <a href="#complaint" onclick="document.getElementById('complaint').scrollIntoView({behavior:'smooth'}); switchTab('policy'); return false;"
+    style="display:block; text-decoration:none; margin-bottom:1rem;">
+    <div style="
+      background: linear-gradient(135deg, #1a4fa0 0%, #0f3070 100%);
+      border-radius: 16px;
+      padding: 1.4rem 1.5rem;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(26,79,160,0.3);
+    ">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <div style="background:rgba(255,255,255,0.15); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size:0.85rem; font-weight:900;">02</div>
+        <span style="font-size:0.75rem; opacity:0.7; font-weight:600;">시민참여</span>
+      </div>
+      <div style="margin-top:0.8rem;">
+        <div style="font-size:1.3rem; font-weight:900; margin-bottom:0.5rem;">정책 제안하기</div>
+        <div style="font-size:0.85rem; opacity:0.85; line-height:1.6;">
+          원주를 더 살기 좋게 만들 아이디어를<br>제안해주세요. 좋은 제안은 의정에 반영합니다.
+        </div>
+      </div>
+    </div>
+  </a>
+
+</div>
+
+<!-- 하단 고정 탭바 -->
+<div style="
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: white;
+  border-top: 1px solid #dde3f0;
+  display: flex;
+  z-index: 200;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+">
+  <a href="#top" style="flex:1; text-decoration:none; padding:0.7rem 0.5rem; text-align:center; display:flex; flex-direction:column; align-items:center; gap:0.2rem; background:#1a4fa0;">
+    <span style="font-size:1.1rem;">🏛</span>
+    <span style="font-size:0.65rem; font-weight:700; color:white; line-height:1.2;">손준기<br>의원실</span>
+  </a>
+  <a href="#complaint" onclick="switchTab('complaint')" style="flex:1; text-decoration:none; padding:0.7rem 0.5rem; text-align:center; display:flex; flex-direction:column; align-items:center; gap:0.2rem;">
+    <span style="font-size:1.1rem;">📬</span>
+    <span style="font-size:0.65rem; font-weight:700; color:#555; line-height:1.2;">민원접수</span>
+  </a>
+  <a href="#complaint" onclick="switchTab('policy')" style="flex:1; text-decoration:none; padding:0.7rem 0.5rem; text-align:center; display:flex; flex-direction:column; align-items:center; gap:0.2rem;">
+    <span style="font-size:1.1rem;">💡</span>
+    <span style="font-size:0.65rem; font-weight:700; color:#555; line-height:1.2;">정책제안</span>
+  </a>
+  <a href="#activity" style="flex:1; text-decoration:none; padding:0.7rem 0.5rem; text-align:center; display:flex; flex-direction:column; align-items:center; gap:0.2rem;">
+    <span style="font-size:1.1rem;">📋</span>
+    <span style="font-size:0.65rem; font-weight:700; color:#555; line-height:1.2;">의정활동</span>
+  </a>
+  <a href="#links" style="flex:1; text-decoration:none; padding:0.7rem 0.5rem; text-align:center; display:flex; flex-direction:column; align-items:center; gap:0.2rem;">
+    <span style="font-size:1.1rem;">🔗</span>
+    <span style="font-size:0.65rem; font-weight:700; color:#555; line-height:1.2;">바로가기</span>
+  </a>
+</div>
 
 
 
