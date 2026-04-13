@@ -113,11 +113,15 @@
     }
     .photo-info h2 { font-size: 1.8rem; font-weight: 900; margin-bottom: 0.5rem; }
     .photo-info .sub { color: var(--primary); font-weight: 600; margin-bottom: 1rem; font-size: 0.95rem; }
-    .photo-info p { color: var(--text-light); line-height: 1.8; font-size: 0.95rem; }
+    .photo-info p { color: var(--text-light); line-height: 1.8; font-size: 0.95rem; text-align: left; }
     .photo-tel { margin-top: 1.2rem; display: inline-flex; align-items: center; gap: 0.5rem; background: #f0f4ff; border: 1px solid #c8d8ff; border-radius: 50px; padding: 0.5rem 1.2rem; font-weight: 700; color: var(--primary); font-size: 0.95rem; text-decoration: none; }
     @media (max-width: 680px) {
-      .photo-section { flex-direction: column; text-align: center; }
-      .photo-section img { width: 200px; height: 230px; }
+      .photo-section { flex-direction: column; text-align: left; padding: 1.5rem; }
+      .photo-section img { width: 100%; height: 240px; border-radius: 12px; }
+      .photo-info h2 { font-size: 1.5rem; }
+      .photo-info .sub { font-size: 0.85rem; }
+      .photo-info p { font-size: 0.88rem; }
+      .photo-tel { font-size: 0.9rem; }
     }
     .hero-badge {
       display: inline-block;
@@ -457,7 +461,7 @@
         시민의 삶과 맞닿은 문제를 끝까지 파고들며<br>
         단순한 문제 제기가 아닌 <strong>해결하는 의정활동</strong>을 해왔습니다.
       </p>
-      <p style="margin-top:1rem; font-size:1.05rem; font-weight:700; color:var(--primary); border-left:3px solid var(--accent); padding-left:0.8rem; line-height:1.6;">
+      <p style="margin-top:1rem; font-size:1.05rem; font-weight:700; color:var(--primary); border-left:3px solid var(--primary); padding-left:0.8rem; line-height:1.6;">
         "열심히"를 넘어<br>"제대로" 하는 의원
       </p>
       <p style="margin-top:1rem; color:var(--text-light); font-size:0.9rem; line-height:1.8;">
