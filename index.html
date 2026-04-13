@@ -451,21 +451,28 @@
 <!-- 상단 히어로 (우상호.com 스타일) -->
 <section id="top" style="
   position: relative;
-  background: linear-gradient(135deg, #0a2d6e 0%, #1a4fa0 60%, #0f3070 100%);
+  background: #0a2d6e;
   min-height: 340px;
   overflow: hidden;
   display: flex;
   align-items: flex-end;
   padding-bottom: 1.5rem;
 ">
-  <!-- 배경 인물 사진 -->
+  <!-- 배경 인물 사진 (자연색) -->
   <div style="
     position: absolute;
     right: 0; top: 0; bottom: 0;
-    width: 80%;
+    width: 75%;
     background: url('council_final.jpg') center top / cover no-repeat;
-    mask-image: linear-gradient(to left, rgba(0,0,0,1) 40%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 40%, transparent 100%);
+    mask-image: linear-gradient(to left, black 40%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, black 40%, transparent 100%);
+  "></div>
+  <!-- 좌측 어두운 그라데이션 (텍스트 가독성) -->
+  <div style="
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 55%;
+    background: linear-gradient(to right, rgba(10,45,110,0.95) 60%, transparent 100%);
   "></div>
   <!-- 텍스트 콘텐츠 -->
   <div style="position:relative; z-index:2; padding: 2.5rem 1.5rem 1rem; color:white; max-width:480px;">
