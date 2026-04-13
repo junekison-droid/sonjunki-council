@@ -477,55 +477,59 @@
 </section>
 
 <!-- 메인 카드 섹션 -->
-<div style="background:#f0f4ff; padding: 1.2rem 1rem 6rem; min-height:50vh;">
+<div style="background:#f0f4ff; padding: 0.8rem 1rem 6rem;">
 
   <!-- 카드 01: 민원 접수 -->
   <a href="#complaint" onclick="document.getElementById('complaint').scrollIntoView({behavior:'smooth'}); switchTab('complaint'); return false;"
-    style="display:block; text-decoration:none; margin-bottom:1rem;">
+    style="display:block; text-decoration:none; margin-bottom:0.7rem;">
     <div style="
       background: linear-gradient(135deg, #1a4fa0 0%, #0f3070 100%);
-      border-radius: 16px;
-      padding: 1.4rem 1.5rem;
+      border-radius: 14px;
+      padding: 1rem 1.2rem;
       color: white;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(26,79,160,0.3);
+      box-shadow: 0 3px 14px rgba(26,79,160,0.25);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     ">
-      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-        <div style="background:rgba(255,255,255,0.15); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size:0.85rem; font-weight:900;">01</div>
-        <span style="font-size:0.75rem; opacity:0.7; font-weight:600;">시민접수</span>
-      </div>
-      <div style="margin-top:0.8rem;">
-        <div style="font-size:1.3rem; font-weight:900; margin-bottom:0.5rem;">민원 접수하기</div>
-        <div style="font-size:0.85rem; opacity:0.85; line-height:1.6;">
-          도로·환경·안전·복지 등 생활 불편 사항을<br>직접 접수해주세요. 끝까지 해결합니다.
+      <div style="font-size:2.2rem; flex-shrink:0;">📬</div>
+      <div style="flex:1;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.3rem;">
+          <div style="font-size:1.05rem; font-weight:900;">민원 접수하기</div>
+          <span style="font-size:0.65rem; opacity:0.6; font-weight:600; background:rgba(255,255,255,0.15); padding:0.2rem 0.5rem; border-radius:10px;">시민접수</span>
+        </div>
+        <div style="font-size:0.78rem; opacity:0.8; line-height:1.5;">
+          도로·환경·안전·복지 등 생활 불편 사항을 접수해주세요.
         </div>
       </div>
+      <div style="font-size:1rem; opacity:0.5;">›</div>
     </div>
   </a>
 
   <!-- 카드 02: 정책 제안 -->
   <a href="#complaint" onclick="document.getElementById('complaint').scrollIntoView({behavior:'smooth'}); switchTab('policy'); return false;"
-    style="display:block; text-decoration:none; margin-bottom:1rem;">
+    style="display:block; text-decoration:none; margin-bottom:0.7rem;">
     <div style="
       background: linear-gradient(135deg, #1a4fa0 0%, #0f3070 100%);
-      border-radius: 16px;
-      padding: 1.4rem 1.5rem;
+      border-radius: 14px;
+      padding: 1rem 1.2rem;
       color: white;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(26,79,160,0.3);
+      box-shadow: 0 3px 14px rgba(26,79,160,0.25);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     ">
-      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-        <div style="background:rgba(255,255,255,0.15); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size:0.85rem; font-weight:900;">02</div>
-        <span style="font-size:0.75rem; opacity:0.7; font-weight:600;">시민참여</span>
-      </div>
-      <div style="margin-top:0.8rem;">
-        <div style="font-size:1.3rem; font-weight:900; margin-bottom:0.5rem;">정책 제안하기</div>
-        <div style="font-size:0.85rem; opacity:0.85; line-height:1.6;">
-          원주를 더 살기 좋게 만들 아이디어를<br>제안해주세요. 좋은 제안은 의정에 반영합니다.
+      <div style="font-size:2.2rem; flex-shrink:0;">💡</div>
+      <div style="flex:1;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.3rem;">
+          <div style="font-size:1.05rem; font-weight:900;">정책 제안하기</div>
+          <span style="font-size:0.65rem; opacity:0.6; font-weight:600; background:rgba(255,255,255,0.15); padding:0.2rem 0.5rem; border-radius:10px;">시민참여</span>
+        </div>
+        <div style="font-size:0.78rem; opacity:0.8; line-height:1.5;">
+          원주를 더 살기 좋게 만들 아이디어를 제안해주세요.
         </div>
       </div>
+      <div style="font-size:1rem; opacity:0.5;">›</div>
     </div>
   </a>
 
@@ -742,13 +746,13 @@
 </main>
 
 <!-- 푸터 -->
-<footer>
+<footer style="padding-bottom:5rem;">
   <p><strong>손준기 의원실</strong></p>
   <p>
-    제9대 원주시의회의원 | 단계동·우산동·학성동<br>
-    더불어민주당 원주시의회 교섭단체 대표의원<br><br>
+    제9대 원주시의회의원 | 단계동·우산동·학성동<br><br>
     본 페이지를 통해 접수된 민원은 의원실에서 검토 후 공식 창구를 통해 처리됩니다.<br>
-    개인정보 처리방침 | 문의: 원주시의회
+    개인정보 처리방침<br><br>
+    ⓒ 2026 손준기. All rights reserved.
   </p>
 </footer>
 
