@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>손준기 | 원주시의회의원</title>
+  <meta name="description" content="제9대 원주시의회의원 손준기 - 단계·우산·학성동 민원 접수 및 의정활동 안내">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #1a4fa0;
+      --primary-dark: #0f3070;
+      --accent: #1a4fa0;
+      --text: #1a1a2e;
+      --text-light: #555;
+      --bg: #f8f9ff;
+      --white: #ffffff;
+      --border: #e0e6f0;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* 헤더 */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 2rem;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .logo span { color: var(--accent); }
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--primary); }
+
+    /* 히어로 */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 520px;
+      display: flex;
+      align-items: stretch;
+    }
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      background: url('hero.jpg') center center / cover no-repeat;
+      opacity: 0.25;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 5rem 2rem 4rem;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    /* 이미지 탭 (히어로 아래) */
+    .photo-section {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      max-width: 1000px;
+      margin: 0 auto 4rem;
+      padding: 3rem 2rem;
+      background: white;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px rgba(26,79,160,0.06);
+    }
+    .photo-section img {
+      width: 280px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      flex-shrink: 0;
+    }
+    .photo-info h2 { font-size: 1.8rem; font-weight: 900; margin-bottom: 0.5rem; }
+    .photo-info .sub { color: var(--primary); font-weight: 600; margin-bottom: 1rem; font-size: 0.95rem; }
+    .photo-info p { color: var(--text-light); line-height: 1.8; font-size: 0.95rem; }
+    .photo-tel { margin-top: 1.2rem; display: inline-flex; align-items: center; gap: 0.5rem; background: #f0f4ff; border: 1px solid #c8d8ff; border-radius: 50px; padding: 0.5rem 1.2rem; font-weight: 700; color: var(--primary); font-size: 0.95rem; text-decoration: none; }
+    @media (max-width: 680px) {
+      .photo-section { flex-direction: column; text-align: center; }
+      .photo-section img { width: 200px; height: 230px; }
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 50px;
+      padding: 0.4rem 1.2rem;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+      letter-spacing: -1px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: #ffd700;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 15px rgba(232,40,46,0.4);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232,40,46,0.5); }
+    .btn-secondary {
+      background: rgba(255,255,255,0.15);
+      color: white;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      border: 1px solid rgba(255,255,255,0.4);
+      transition: background 0.2s;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.25); }
+
+    /* 통계 */
+    .stats {
+      background: white;
+      padding: 2.5rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .stats-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+    .stat-num {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--primary);
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-top: 0.3rem;
+    }
+
+    /* 메인 콘텐츠 */
+    .main { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+
+    /* 섹션 타이틀 */
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .section-title h2 {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .section-title p { color: var(--text-light); font-size: 0.95rem; }
+
+    /* 카드 그리드 */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 5rem;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(26,79,160,0.1); }
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, var(--primary), #4a90e2);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+    .card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .card p { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; }
+
+    /* 민원 폼 */
+    .complaint-section {
+      background: white;
+      border-radius: 20px;
+      padding: 3rem;
+      border: 1px solid var(--border);
+      margin-bottom: 5rem;
+      box-shadow: 0 4px 20px rgba(26,79,160,0.06);
+    }
+    .form-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .form-badge {
+      background: #fff3f3;
+      color: var(--accent);
+      border: 1px solid #ffd0d0;
+      border-radius: 50px;
+      padding: 0.3rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .form-group label span { color: var(--accent); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 0.8rem 1rem;
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: border-color 0.2s;
+      background: var(--bg);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: white;
+    }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+
+    .privacy-box {
+      background: #f0f4ff;
+      border: 1px solid #c8d8ff;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-top: 0.5rem;
+    }
+    .privacy-check {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 0.8rem;
+      font-size: 0.88rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .privacy-check input { width: 18px; height: 18px; cursor: pointer; accent-color: var(--primary); }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 1.5rem;
+      background: linear-gradient(135deg, var(--primary) 0%, #2563c4 100%);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 15px rgba(26,79,160,0.3);
+    }
+    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26,79,160,0.4); }
+    .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    /* 링크 섹션 */
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 5rem;
+    }
+    .link-card {
+      background: white;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1.2rem 1.5rem;
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .link-card:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+    .link-card .icon { font-size: 1.4rem; }
+
+    /* 푸터 */
+    footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.6);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    footer strong { color: white; }
+    footer p { font-size: 0.85rem; line-height: 1.8; margin-top: 0.5rem; }
+
+    /* 성공 메시지 */
+    .success-msg {
+      display: none;
+      background: #e8f5e9;
+      border: 1px solid #a5d6a7;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      color: #2e7d32;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- 헤더 -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo" style="font-size:0.95rem; line-height:1.3; display:flex; flex-direction:column;">제9대 원주시의회 <span style="font-size:1.1rem;">손준기 의원</span></a>
+    <nav>
+      <a href="#activity">의정활동</a>
+      <a href="#complaint">민원접수</a>
+      <a href="#links">바로가기</a>
+    </nav>
+  </div>
+</header>
+
+<!-- 히어로 -->
+<section class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-content">
+  <div class="hero-badge">🏛 제9대 원주시의회의원</div>
+  <h1>현장의 목소리를<br><em>조례와 예산으로</em></h1>
+  <p>단계동 · 우산동 · 학성동 주민 여러분과 함께합니다</p>
+  <div style="margin-bottom:1rem; opacity:0.85; font-size:0.95rem;">
+    📞 의원실 대표번호: <strong style="color:#ffd700;">033-737-5050</strong>
+  </div>
+  <div class="hero-btns" style="margin-top:0.5rem;">
+    <a href="#complaint" class="btn-primary">📬 민원 접수하기</a>
+    <a href="#complaint" class="btn-secondary" onclick="switchTab('policy')">💡 정책 제안하기</a>
+  </div>
+  </div><!-- /hero-content -->
+</section>
+
+<!-- 통계 -->
+<section class="stats">
+  <div class="stats-inner">
+    <div>
+      <span class="stat-num">3기</span>
+      <div class="stat-label">의정활동 경력</div>
+    </div>
+    <div>
+      <span class="stat-num">민주당</span>
+      <div class="stat-label">교섭단체 대표의원</div>
+    </div>
+    <div>
+      <span class="stat-num">단계·우산·학성</span>
+      <div class="stat-label">담당 선거구</div>
+    </div>
+    <div>
+      <span class="stat-num">24/7</span>
+      <div class="stat-label">민원 접수 가능</div>
+    </div>
+  </div>
+</section>
+
+<!-- 의원 소개 -->
+<div style="max-width:1100px; margin:0 auto; padding: 3rem 2rem 0;">
+  <div class="photo-section">
+    <img src="profile.jpg" alt="손준기 의원" style="object-position: center top;">
+    <div class="photo-info">
+      <div class="sub">더불어민주당 | 원주시의회의원</div>
+      <h2>손준기 원주시의원</h2>
+      <p style="margin-bottom:1rem; font-size:1rem; font-weight:600; color:var(--text);">
+        말이 아닌 결과로 증명해온 시의원, 손준기입니다.
+      </p>
+      <p>
+        현장 민원, 소상공인 피해, 생활 안전 문제까지<br>
+        시민의 삶과 맞닿은 문제를 끝까지 파고들며<br>
+        단순한 문제 제기가 아닌 <strong>해결하는 의정활동</strong>을 해왔습니다.
+      </p>
+      <p style="margin-top:1rem; font-size:1.05rem; font-weight:700; color:var(--primary); border-left:3px solid var(--accent); padding-left:0.8rem; line-height:1.6;">
+        "열심히"를 넘어<br>"제대로" 하는 의원
+      </p>
+      <p style="margin-top:1rem; color:var(--text-light); font-size:0.9rem; line-height:1.8;">
+        바른 의정의 기준, 손준기.<br>
+        앞으로도 시민의 목소리를 가장 먼저 듣고,<br>
+        가장 끝까지 책임지는 정치로<br>
+        원주를 더 살기 좋은 도시로 만들어가겠습니다.
+      </p>
+      <a href="tel:033-737-5050" class="photo-tel">📞 033-737-5050</a>
+    </div>
+  </div>
+</div>
+
+<!-- 의정활동 -->
+<main class="main">
+  <section id="activity">
+    <div class="section-title">
+      <h2>주요 의정활동</h2>
+      <p>주민의 목소리를 실제 변화로 만들어갑니다</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">📋</div>
+        <h3>조례 발의</h3>
+        <p>주민 생활과 밀접한 조례를 직접 발의하여 제도적 기반을 마련합니다.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💰</div>
+        <h3>예산 확보</h3>
+        <p>단계·우산·학성동의 필요한 사업 예산을 적극적으로 확보합니다.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎤</div>
+        <h3>시정 질문</h3>
+        <p>행정의 투명성을 높이고 주민 이익을 위한 날카로운 시정 질문을 이어갑니다.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤝</div>
+        <h3>현장 소통</h3>
+        <p>지역 주민과의 직접적인 만남을 통해 생생한 현장의 목소리를 듣습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 후원회 섹션 -->
+  <section id="support" style="margin-bottom:5rem;">
+    <div class="section-title">
+      <h2>후원 안내</h2>
+      <p>여러분의 소중한 응원을 원주시민의 희망으로 돌려드립니다</p>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+      <img src="support_card.jpg" alt="손준기 의원 후원 안내" style="max-width: 560px; width: 100%; border-radius: 16px; box-shadow: 0 8px 40px rgba(26,79,160,0.2);">
+    </div>
+  </section>
+
+  <!-- 민원 접수 -->
+  <section id="complaint">
+    <div class="section-title">
+      <h2>민원 접수</h2>
+      <p>불편사항이나 건의사항을 알려주시면 직접 확인하겠습니다</p>
+    </div>
+    <!-- 탭 버튼 -->
+    <div style="display:flex; gap:0.5rem; margin-bottom:2rem;">
+      <button onclick="switchTab('complaint')" id="tab-complaint" style="flex:1; padding:0.9rem; border-radius:12px; border:2px solid var(--primary); background:var(--primary); color:white; font-size:1rem; font-weight:700; font-family:inherit; cursor:pointer; transition:all 0.2s;">
+        📬 민원 접수하기
+      </button>
+      <button onclick="switchTab('policy')" id="tab-policy" style="flex:1; padding:0.9rem; border-radius:12px; border:2px solid var(--border); background:white; color:var(--text-light); font-size:1rem; font-weight:700; font-family:inherit; cursor:pointer; transition:all 0.2s;">
+        💡 정책 제안하기
+      </button>
+    </div>
+
+    <!-- Google Forms 임베드 -->
+    <div id="iframe-complaint">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe87fQwAEhC7w1SbgkVju9fDJtR8HNpisc0ZTxyo9HubJ-JsA/viewform?embedded=true"
+        width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0"
+        style="border-radius:12px; border:1px solid var(--border);">로딩 중...</iframe>
+    </div>
+    <div id="iframe-policy" style="display:none;">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd_ghtNDE7ZNntLgWLHvDI953U0dUYUEt3pa2_6kII7zbMjBA/viewform?embedded=true"
+        width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0"
+        style="border-radius:12px; border:1px solid var(--border);">로딩 중...</iframe>
+    </div>
+
+    <div class="complaint-section">
+
+      <!-- 민원 접수 폼 -->
+      <div id="form-complaint">
+      <div class="form-header">
+        <h3 style="font-size:1.2rem; font-weight:800;">📬 민원 접수 양식</h3>
+        <span class="form-badge">24시간 접수 가능</span>
+      </div>
+
+      <form id="complaintForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>이름 <span>*</span></label>
+            <input type="text" name="name" placeholder="홍길동" required>
+          </div>
+          <div class="form-group">
+            <label>연락처 <span>*</span></label>
+            <input type="tel" name="phone" placeholder="010-0000-0000" required>
+          </div>
+          <div class="form-group">
+            <label>거주 지역 <span>*</span></label>
+            <select name="area" required>
+              <option value="">선택해주세요</option>
+              <option value="단계동">단계동</option>
+              <option value="우산동">우산동</option>
+              <option value="학성동">학성동</option>
+              <option value="기타">기타</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>민원 유형 <span>*</span></label>
+            <select name="type" required>
+              <option value="">선택해주세요</option>
+              <option value="도로·교통">도로·교통</option>
+              <option value="환경·위생">환경·위생</option>
+              <option value="복지·보건">복지·보건</option>
+              <option value="안전·치안">안전·치안</option>
+              <option value="교육·문화">교육·문화</option>
+              <option value="기타">기타</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>민원 제목 <span>*</span></label>
+            <input type="text" name="title" placeholder="민원 내용을 간략히 입력해주세요" required>
+          </div>
+          <div class="form-group full">
+            <label>상세 내용 <span>*</span></label>
+            <textarea name="content" placeholder="불편사항이나 건의사항을 상세히 작성해주세요. 위치, 상황, 요청사항 등을 구체적으로 적어주시면 더 빠르게 처리됩니다." required></textarea>
+          </div>
+          <div class="form-group full">
+            <div class="privacy-box">
+              <strong>📌 개인정보 수집 및 이용 동의</strong><br><br>
+              수집 항목: 이름, 연락처, 거주 지역, 민원 내용<br>
+              수집 목적: 민원 접수 및 처리, 결과 안내<br>
+              보유 기간: 민원 처리 완료 후 1년<br><br>
+              귀하의 개인정보는 민원 처리 목적 외에는 사용되지 않으며, 제3자에게 제공하지 않습니다.
+              <label class="privacy-check">
+                <input type="checkbox" id="privacyCheck" required>
+                개인정보 수집 및 이용에 동의합니다 <span style="color:var(--accent)">*</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="submit-btn" id="submitBtn">민원 접수하기</button>
+        <div class="success-msg" id="successMsg">
+          ✅ 민원이 성공적으로 접수되었습니다.<br>
+          빠른 시일 내에 확인 후 연락드리겠습니다.
+        </div>
+      </form>
+      </div><!-- /form-complaint -->
+
+      <!-- 정책 제안 폼 -->
+      <div id="form-policy" style="display:none;">
+      <div class="form-header">
+        <h3 style="font-size:1.2rem; font-weight:800;">💡 정책 제안 양식</h3>
+        <span class="form-badge" style="background:#f0fff4; color:#2e7d32; border-color:#a5d6a7;">아이디어를 제안해주세요</span>
+      </div>
+      <form id="policyForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>이름 <span>*</span></label>
+            <input type="text" name="p_name" placeholder="홍길동" required>
+          </div>
+          <div class="form-group">
+            <label>연락처</label>
+            <input type="tel" name="p_phone" placeholder="010-0000-0000 (선택)">
+          </div>
+          <div class="form-group">
+            <label>거주 지역 <span>*</span></label>
+            <select name="p_area" required>
+              <option value="">선택해주세요</option>
+              <option value="단계동">단계동</option>
+              <option value="우산동">우산동</option>
+              <option value="학성동">학성동</option>
+              <option value="기타">기타</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>정책 분야 <span>*</span></label>
+            <select name="p_field" required>
+              <option value="">선택해주세요</option>
+              <option value="교통·도시">교통·도시</option>
+              <option value="환경·에너지">환경·에너지</option>
+              <option value="복지·보건">복지·보건</option>
+              <option value="교육·청년">교육·청년</option>
+              <option value="경제·일자리">경제·일자리</option>
+              <option value="문화·관광">문화·관광</option>
+              <option value="기타">기타</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>제안 제목 <span>*</span></label>
+            <input type="text" name="p_title" placeholder="정책 제안 제목을 입력해주세요" required>
+          </div>
+          <div class="form-group full">
+            <label>제안 내용 <span>*</span></label>
+            <textarea name="p_content" placeholder="현재 문제점, 제안하는 해결책, 기대효과 등을 자세히 적어주세요. 좋은 아이디어는 실제 의정활동에 반영됩니다." required></textarea>
+          </div>
+          <div class="form-group full">
+            <div class="privacy-box">
+              <strong>📌 개인정보 수집 및 이용 동의</strong><br><br>
+              수집 항목: 이름, 연락처(선택), 거주 지역, 제안 내용<br>
+              수집 목적: 정책 제안 검토 및 의정활동 반영<br>
+              보유 기간: 검토 완료 후 1년<br><br>
+              귀하의 개인정보는 정책 제안 검토 목적 외에는 사용되지 않습니다.
+              <label class="privacy-check">
+                <input type="checkbox" id="privacyCheck2" required>
+                개인정보 수집 및 이용에 동의합니다 <span style="color:var(--accent)">*</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="submit-btn" id="submitBtn2" style="background: linear-gradient(135deg, #2e7d32 0%, #43a047 100%); box-shadow: 0 4px 15px rgba(46,125,50,0.3);">정책 제안 제출하기</button>
+        <div class="success-msg" id="successMsg2" style="background:#e8f5e9; border-color:#a5d6a7; color:#2e7d32;">
+          ✅ 정책 제안이 성공적으로 접수되었습니다.<br>
+          검토 후 의정활동에 반영하겠습니다.
+        </div>
+      </form>
+      </div><!-- /form-policy -->
+
+  </section>
+
+  <!-- 바로가기 -->
+  <section id="links">
+    <div class="section-title">
+      <h2>바로가기</h2>
+      <p>SNS 및 공식 채널을 통해 소통하세요</p>
+    </div>
+    <div class="links-grid">
+      <a href="https://instagram.com" target="_blank" class="link-card">
+        <span class="icon">📸</span> 인스타그램
+      </a>
+      <a href="https://youtube.com" target="_blank" class="link-card">
+        <span class="icon">▶️</span> 유튜브
+      </a>
+      <a href="https://facebook.com" target="_blank" class="link-card">
+        <span class="icon">📘</span> 페이스북
+      </a>
+      <a href="https://wonju.go.kr" target="_blank" class="link-card">
+        <span class="icon">🏛</span> 원주시청
+      </a>
+      <a href="https://wonjucouncil.kr" target="_blank" class="link-card">
+        <span class="icon">⚖️</span> 원주시의회
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- 푸터 -->
+<footer>
+  <p><strong>손준기 의원실</strong></p>
+  <p>
+    제9대 원주시의회의원 | 단계동·우산동·학성동<br>
+    더불어민주당 원주시의회 교섭단체 대표의원<br><br>
+    본 페이지를 통해 접수된 민원은 의원실에서 검토 후 공식 창구를 통해 처리됩니다.<br>
+    개인정보 처리방침 | 문의: 원주시의회
+  </p>
+</footer>
+
+<script>
+  // Formspree 이메일 전송 함수
+  async function sendToEmail(formData, type) {
+    const FORMSPREE_ID = 'xwpbwrkb'; // Formspree 설정 후 ID 교체
+    const data = Object.fromEntries(formData.entries());
+
+    // EmailJS 방식 (무료, 설정 간편)
+    // 대안: fetch로 직접 전송
+    const body = type === 'complaint'
+      ? `[민원접수]\n이름: ${data.name}\n연락처: ${data.phone}\n지역: ${data.area}\n유형: ${data.type}\n제목: ${data.title}\n\n내용:\n${data.content}`
+      : `[정책제안]\n이름: ${data.p_name}\n연락처: ${data.p_phone||'미입력'}\n지역: ${data.p_area}\n분야: ${data.p_field}\n제목: ${data.p_title}\n\n내용:\n${data.p_content}`;
+
+    const subject = type === 'complaint'
+      ? `[민원접수] ${data.title} - ${data.area} ${data.name}`
+      : `[정책제안] ${data.p_title} - ${data.p_name}`;
+
+    // Formspree로 전송
+    const resp = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ email: data.phone || data.p_phone || 'noreply@example.com', _subject: subject, message: body, _replyto: 'junekison@gmail.com' })
+    });
+    return resp.ok;
+  }
+
+  // 민원 폼 제출
+  document.getElementById('complaintForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const btn = document.getElementById('submitBtn');
+    const successMsg = document.getElementById('successMsg');
+
+    if (!document.getElementById('privacyCheck').checked) {
+      alert('개인정보 수집 및 이용에 동의해주세요.');
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = '접수 중...';
+
+    const ok = await sendToEmail(new FormData(this), 'complaint');
+
+    btn.style.display = 'none';
+    successMsg.style.display = 'block';
+    if (!ok) successMsg.innerHTML = '✅ 민원이 접수되었습니다.<br>빠른 시일 내에 확인 후 연락드리겠습니다.';
+    this.reset();
+  });
+
+  // 탭 전환
+  function switchTab(tab) {
+    const isComplaint = tab === 'complaint';
+    // 기존 폼 숨김
+    if(document.getElementById('form-complaint')) document.getElementById('form-complaint').style.display = 'none';
+    if(document.getElementById('form-policy')) document.getElementById('form-policy').style.display = 'none';
+    // iframe 토글
+    document.getElementById('iframe-complaint').style.display = isComplaint ? 'block' : 'none';
+    document.getElementById('iframe-policy').style.display = isComplaint ? 'none' : 'block';
+
+    const tc = document.getElementById('tab-complaint');
+    const tp = document.getElementById('tab-policy');
+    tc.style.background = isComplaint ? 'var(--primary)' : 'white';
+    tc.style.color = isComplaint ? 'white' : 'var(--text-light)';
+    tc.style.borderColor = isComplaint ? 'var(--primary)' : 'var(--border)';
+    tp.style.background = isComplaint ? 'white' : 'var(--primary)';
+    tp.style.color = isComplaint ? 'var(--text-light)' : 'white';
+    tp.style.borderColor = isComplaint ? 'var(--border)' : 'var(--primary)';
+
+    document.getElementById('complaint').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  window.switchTab = switchTab;
+
+  // 정책 폼 제출
+  document.getElementById('policyForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    if (!document.getElementById('privacyCheck2').checked) {
+      alert('개인정보 수집 및 이용에 동의해주세요.');
+      return;
+    }
+    const btn = document.getElementById('submitBtn2');
+    const successMsg = document.getElementById('successMsg2');
+    btn.disabled = true;
+    btn.textContent = '제출 중...';
+
+    await sendToEmail(new FormData(this), 'policy');
+
+    btn.style.display = 'none';
+    successMsg.style.display = 'block';
+    this.reset();
+  });
+
+  // 부드러운 스크롤
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      if (this.getAttribute('href') === '#complaint') return;
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+
+</body>
+</html>
