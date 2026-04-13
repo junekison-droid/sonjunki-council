@@ -44,6 +44,13 @@
       align-items: center;
       justify-content: space-between;
       height: 64px;
+      flex-wrap: wrap;
+      padding: 8px 0;
+    }
+    @media (max-width: 600px) {
+      .header-inner { height: auto; gap: 4px; }
+      .logo { font-size: 0.85rem !important; }
+      nav a { margin-left: 1rem; font-size: 0.8rem; }
     }
     .logo {
       font-size: 1.2rem;
@@ -77,8 +84,8 @@
     .hero-img {
       position: absolute;
       inset: 0;
-      background: url('hero.jpg') center center / cover no-repeat;
-      opacity: 0.25;
+      background: url('profile.jpg') center top / cover no-repeat;
+      opacity: 0.35;
     }
     .hero-content {
       position: relative;
@@ -163,9 +170,9 @@
       font-weight: 700;
       font-size: 1rem;
       transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 15px rgba(232,40,46,0.4);
+      box-shadow: 0 4px 15px rgba(26,79,160,0.4);
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232,40,46,0.5); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26,79,160,0.5); }
     .btn-secondary {
       background: rgba(255,255,255,0.15);
       color: white;
